@@ -4,12 +4,26 @@ const divs = document.querySelectorAll(".tabs-wrapper > div");
 
 console.log(divs);
 
+if (localStorage.active) {
+  render(localStorage.active);
+}
+
+function render(x) {
+  const buttons = nav.querySelectorAll("button");
+  divs.forEach((item) => {
+    item.classList.remove("active");
+  });
+  buttons.forEach((item) => {
+    item.classList.remove("active");
+  });
+  divs[x - 1].classList.add("active");
+  buttons[x - 1].classList.add("active");
+}
+
 nav.addEventListener("click", (event) => {
   if (event.target.matches("button")) {
     const activeNumber = event.target.dataset.tab;
-    divs.forEach((item) => {
-      item.classList.remove("active");
-    });
-    divs[activeNumber - 1].classList.add("active");
+    render(activeNumber);
+    localStorage.active = `${activeNumber}`;
   }
 });
