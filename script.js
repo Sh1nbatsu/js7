@@ -4,10 +4,6 @@ const divs = document.querySelectorAll(".tabs-wrapper > div");
 
 console.log(divs);
 
-if (localStorage.active) {
-  render(localStorage.active);
-}
-
 function render(x) {
   const buttons = nav.querySelectorAll("button");
   divs.forEach((item) => {
@@ -18,6 +14,11 @@ function render(x) {
   });
   divs[x - 1].classList.add("active");
   buttons[x - 1].classList.add("active");
+}
+
+
+if (localStorage.active) {
+  render(localStorage.active);
 }
 
 nav.addEventListener("click", (event) => {
