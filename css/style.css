@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.tabs-wrapper {
+  padding: 20px;
+  background-color: aquamarine;
+}
+.tabs-wrapper button {
+  background-color: rgb(6, 89, 62);
+  padding: 10px 20px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.tabs-wrapper button:hover {
+  background-color: green;
+}
+.tabs-wrapper button.active {
+  background-color: green;
+}
+.tabs-wrapper div {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+.tabs-wrapper div.active {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transition: 0.5s;
+}/*# sourceMappingURL=style.css.map */
